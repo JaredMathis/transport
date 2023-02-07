@@ -23,7 +23,7 @@ export function component_top(parent) {
         'About',
         'Contact'
     ], label => {
-        element_with_text(middle, 'span', label);
+        element_with_text(middle, 'span',  ` ${label} `);
     });
     let right = element_with_text(container, 'div', 'right');
     element_style_display_inline_block(right);
