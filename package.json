@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "m00": "^0.0.39"
+  },
+  "scripts": {
+    "m": "node node_modules\\m00\\src\\command.mjs",
+    "mg": "node node_modules\\m00\\src\\commandgit.mjs"
+  }
+}
