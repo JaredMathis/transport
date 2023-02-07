@@ -1,3 +1,4 @@
+import { for_each } from './../../node_modules/m00/src/for/each.mjs';
 import { element_style_display_inline_block } from './../../node_modules/m00/src/element/style/display/inline/block.mjs';
 import { element_style_width_min_max } from './../../node_modules/m00/src/element/style/width/min/max.mjs';
 import { element } from './../../node_modules/m00/src/element.mjs';
@@ -11,10 +12,19 @@ export function component_top(parent) {
     });
     let left = element_with_text(container, 'div', 'left');
     element_style_display_inline_block(left);
-    element_style_width_min_max(right, '33.33vw');
-    let middle = element_with_text(container, 'div', 'middle');
+    element_style_width_min_max(left, '33.33vw');
+    let middle = element(container, 'div');
     element_style_display_inline_block(middle);
-    element_style_width_min_max(right, '33.33vw');
+    element_style_width_min_max(middle, '33.33vw');
+    for_each([
+        'Home',
+        'Services',
+        'Careers',
+        'About',
+        'Contact'
+    ], label => {
+        element_with_text(middle, 'span', label);
+    });
     let right = element_with_text(container, 'div', 'right');
     element_style_display_inline_block(right);
     element_style_width_min_max(right, '33.33vw');
