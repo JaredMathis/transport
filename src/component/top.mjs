@@ -1,3 +1,4 @@
+import { element_style_display_inline_block } from './../../node_modules/m00/src/element/style/display/inline/block.mjs';
 import { element_style_width_min_max } from './../../node_modules/m00/src/element/style/width/min/max.mjs';
 import { element } from './../../node_modules/m00/src/element.mjs';
 import { element_style } from './../../node_modules/m00/src/element/style.mjs';
