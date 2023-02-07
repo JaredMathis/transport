@@ -326,7 +326,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"config_company\": () => (/* binding */ config_company)\n/* harmony export */ });\nfunction config_company() {\n}\n\n//# sourceURL=webpack:///./src/config/company.mjs?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"config_company\": () => (/* binding */ config_company)\n/* harmony export */ });\nfunction config_company() {\n    return {\n        name: 'My Company Name'\n    }\n}\n\n//# sourceURL=webpack:///./src/config/company.mjs?");
 
 /***/ }),
 
