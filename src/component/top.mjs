@@ -9,12 +9,12 @@ export function component_top(parent) {
         color: 'white'
     });
     let left = element_with_text(container, 'div', 'left');
-    element_style(left, { display: 'inline-block' });
+    element_style_display_inline_block(left);
     element_style_width_min_max(right, '33.33vw');
     let middle = element_with_text(container, 'div', 'middle');
-    element_style(middle, { display: 'inline-block' });
+    element_style_display_inline_block(middle);
     element_style_width_min_max(right, '33.33vw');
     let right = element_with_text(container, 'div', 'right');
-    element_style(right, { display: 'inline-block' });
+    element_style_display_inline_block(right);
     element_style_width_min_max(right, '33.33vw');
 }
