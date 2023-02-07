@@ -8,6 +8,9 @@ export function component_top(parent) {
         color: 'white'
     });
     let left = element_with_text(container, 'div', 'left');
+    element_style(left, { display: 'inline-block' });
     let middle = element_with_text(container, 'div', 'middle');
+    element_style(middle, { display: 'inline-block' });
     let right = element_with_text(container, 'div', 'right');
+    element_style(right, { display: 'inline-block' });
 }
