@@ -1,3 +1,4 @@
+import { element_style_width_min_max } from './../../node_modules/m00/src/element/style/width/min/max.mjs';
 import { element } from './../../node_modules/m00/src/element.mjs';
 import { element_style } from './../../node_modules/m00/src/element/style.mjs';
 import { element_with_text } from './../../node_modules/m00/src/element/with/text.mjs';
@@ -9,20 +10,11 @@ export function component_top(parent) {
     });
     let left = element_with_text(container, 'div', 'left');
     element_style(left, { display: 'inline-block' });
-    element_style(left, {
-        minWidth: '33.33vw',
-        maxWidth: '33.33vw '
-    });
+    element_style_width_min_max(right, '33.33vw');
     let middle = element_with_text(container, 'div', 'middle');
     element_style(middle, { display: 'inline-block' });
-    element_style(middle, {
-        minWidth: '33.33vw',
-        maxWidth: '33.33vw '
-    });
+    element_style_width_min_max(right, '33.33vw');
     let right = element_with_text(container, 'div', 'right');
     element_style(right, { display: 'inline-block' });
-    element_style(right, {
-        minWidth: '33.33vw',
-        maxWidth: '33.33vw '
-    });
+    element_style_width_min_max(right, '33.33vw');
 }
