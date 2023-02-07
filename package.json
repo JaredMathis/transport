@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "m00": "^0.0.49"
+    "m00": "^0.0.50"
   },
   "scripts": {
     "m": "node node_modules\\m00\\src\\command.mjs",
@@ -8,7 +8,8 @@
     "mil": "npm i m00@latest",
     "mi": "npm run mil && npm run m",
     "mig": "npm run mil && npm run mg",
-    "dev": "npx serve dist && npx webpack --mode development --watch"
+    "dev": "npx serve dist",
+    "watch": "npx webpack --mode development --watch"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
