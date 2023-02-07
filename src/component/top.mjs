@@ -7,5 +7,7 @@ export function component_top(parent) {
         backgroundColor: 'black',
         color: 'white'
     });
-    element_with_text(container, 'div', 'hello');
+    element_with_text(container, 'div', 'left');
+    element_with_text(container, 'div', 'middle');
+    element_with_text(container, 'div', 'right');
 }
