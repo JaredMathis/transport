@@ -8,7 +8,7 @@
     "mil": "npm i m00@latest",
     "mi": "npm run mil && npm run m",
     "mig": "npm run mil && npm run mg",
-    "dev": "npx webpack --mode development --watch && npx http-server"
+    "dev": "npx http-server && npx webpack --mode development --watch"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
