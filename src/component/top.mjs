@@ -28,7 +28,11 @@ export function component_top(parent) {
         'About',
         'Contact'
     ], label => {
-        element_with_text(middle, 'span', ` ${ label } `);
+        let link = element_with_text(middle, 'div', ` ${ label } `);
+        element_style_display_inline_block(link);
+        element_style(link, {
+            padding: '0.8vh',
+        })
     });
     element_style_margin_vertical_auto(middle);
     let right = element_with_text(container, 'div', 'right');
