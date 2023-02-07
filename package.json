@@ -1,9 +1,16 @@
 {
   "dependencies": {
-    "m00": "^0.0.39"
+    "m00": "^0.0.43"
   },
   "scripts": {
     "m": "node node_modules\\m00\\src\\command.mjs",
-    "mg": "node node_modules\\m00\\src\\commandgit.mjs"
+    "mg": "node node_modules\\m00\\src\\commandgit.mjs",
+    "mil": "npm i m00@latest",
+    "mi": "npm run mil && npm run m",
+    "mig": "npm run mil && npm run mg"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
