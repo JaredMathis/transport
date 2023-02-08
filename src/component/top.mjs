@@ -11,21 +11,9 @@ import { element_style } from './../../node_modules/m00/src/element/style.mjs';
 import { element_with_text } from './../../node_modules/m00/src/element/with/text.mjs';
 import { component_fa } from './fa.mjs';
 export function component_top(content) {
-    const links = [
-        'Home',
-        'Services',
-        'Careers',
-        'About',
-        'Contact'
-    ];
+    const links = company_links_get();
     let overlay = component_top_overlay(links, content);
-    let container = element(content, 'div');
-    element_style(container, {
-        backgroundColor: 'black',
-        color: 'white',
-        display: 'flex',
-        'align-items': 'center'
-    });
+    let container = component_top_container(content);
     component_top_left(container);
     let middle = component_top_middle(container, links);
     let right = component_top_right(container);
@@ -44,6 +32,31 @@ export function component_top(content) {
             });
         }
     });
+    component_top_right_small(container, overlay, content);
+}
+
+function company_links_get() {
+    return [
+        'Home',
+        'Services',
+        'Careers',
+        'About',
+        'Contact'
+    ];
+}
+
+function component_top_container(content) {
+    let container = element(content, 'div');
+    element_style(container, {
+        backgroundColor: 'black',
+        color: 'white',
+        display: 'flex',
+        'align-items': 'center'
+    });
+    return container;
+}
+
+function component_top_right_small(container, overlay, content) {
     let right_small = element(container, 'div');
     element_style(right_small, {
         marginLeft: 'auto',
