@@ -1,3 +1,4 @@
+import { click } from './../../node_modules/m00/src/click.mjs';
 import { element_style_display_none } from './../../node_modules/m00/src/element/style/display/none.mjs';
 import { window_match_media_on_change } from './../../node_modules/m00/src/window/match/media/on/change.mjs';
 import { config_company } from './../config/company.mjs';
@@ -23,18 +24,14 @@ export function component_top(parent) {
         top: '0',
         left: '0',
         backgroundColor: 'white',
-        // width: '100%',
-        // height: '100%',
+        right: '0',
+        bottom: '0',
         padding: '5vh'
-    })
-    // element_style_display_none(overlay);
+    });
     for_each(links, l => {
         let link = element_with_text(overlay, 'div', l);
-        element_style(link, {
-            padding: '1vh'
-        })
-    })
-
+        element_style(link, { padding: '1vh' });
+    });
     let container = element(parent, 'div');
     element_style(container, {
         backgroundColor: 'black',
@@ -43,9 +40,7 @@ export function component_top(parent) {
         'align-items': 'center'
     });
     let left = element_with_text(container, 'div', config_company().name);
-    element_style(left, {
-        fontSize: '4vh'
-    })
+    element_style(left, { fontSize: '4vh' });
     element_style_display_inline_block(left);
     element_style_width_min_max(left, '33.33%');
     element_style_margin_vertical_auto(left);
@@ -79,11 +74,14 @@ export function component_top(parent) {
     let right_small = element(container, 'div');
     element_style(right_small, {
         marginLeft: 'auto',
-        marginRight: '3vh',
-    })
+        marginRight: '3vh'
+    });
     let bars = component_fa(right_small, 'bars');
     element_style(bars, {
         fontSize: '4vh',
         cursor: 'pointer'
-    })
+    });
+    click(bars, () => {
+        element_style(overlay, { display: 'block' });
+    });
 }
