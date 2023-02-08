@@ -1,3 +1,4 @@
+import { element_style_display_none } from './../../node_modules/m00/src/element/style/display/none.mjs';
 import { window_match_media_on_change } from './../../node_modules/m00/src/window/match/media/on/change.mjs';
 import { config_company } from './../config/company.mjs';
 import { element_style_margin_vertical_auto } from './../../node_modules/m00/src/element/style/margin/vertical/auto.mjs';
@@ -46,7 +47,7 @@ export function component_top(parent) {
                 middle,
                 right
             ], e => {
-                element_hide(left);
+                element_style_display_none(left);
             });
         }
     });
