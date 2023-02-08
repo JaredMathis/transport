@@ -18,32 +18,7 @@ export function component_top(content) {
         'About',
         'Contact'
     ];
-    let overlay = element(document.body, 'div');
-    element_style_display_none(overlay)
-    element_style(overlay, {
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        backgroundColor: 'white',
-        right: '0',
-        bottom: '0',
-        padding: '5vh'
-    });
-    for_each(links, l => {
-        let link = element_with_text(overlay, 'div', l);
-        element_style(link, { padding: '1vh' });
-    });
-    let close = component_fa(overlay, 'times');
-    element_style(close, {
-        position: 'absolute',
-        top: '5vh',
-        right: '5vh',
-        cursor: 'pointer',
-    });
-    click(close, () => {
-        element_style(content, { display: 'block' });
-        element_style_display_none(overlay);
-    });
+    let overlay = component_top_overlay(links, content);
     let container = element(content, 'div');
     element_style(container, {
         backgroundColor: 'black',
@@ -95,6 +70,36 @@ export function component_top(content) {
         element_style(overlay, { display: 'block' });
         element_style_display_none(content);
     });
+}
+
+function component_top_overlay(links, content) {
+    let overlay = element(document.body, 'div');
+    element_style_display_none(overlay);
+    element_style(overlay, {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        backgroundColor: 'white',
+        right: '0',
+        bottom: '0',
+        padding: '5vh'
+    });
+    for_each(links, l => {
+        let link = element_with_text(overlay, 'div', l);
+        element_style(link, { padding: '1vh' });
+    });
+    let close = component_fa(overlay, 'times');
+    element_style(close, {
+        position: 'absolute',
+        top: '5vh',
+        right: '5vh',
+        cursor: 'pointer',
+    });
+    click(close, () => {
+        element_style(content, { display: 'block' });
+        element_style_display_none(overlay);
+    });
+    return overlay;
 }
 
 function component_style_top_item(left) {
