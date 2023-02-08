@@ -28,8 +28,7 @@ export function component_top(content) {
     });
     component_top_left(container);
     let middle = component_top_middle(container, links);
-    let right = element_with_text(container, 'div', config_company().phone);
-    component_style_top_item(right);
+    let right = component_top_right(container);
     window_match_media_on_change(`(min-width: 701px)`, matches => {
         const group1 = [
             middle,
@@ -59,6 +58,12 @@ export function component_top(content) {
         element_style(overlay, { display: 'block' });
         element_style_display_none(content);
     });
+}
+
+function component_top_right(container) {
+    let right = element_with_text(container, 'div', config_company().phone);
+    component_style_top_item(right);
+    return right;
 }
 
 function component_top_middle(container, links) {
