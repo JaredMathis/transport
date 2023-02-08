@@ -22,7 +22,6 @@ export function component_top(parent) {
     element_style_margin_vertical_auto(left);
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
-    element_style_display_inline_block(middle);
     element_style_width_min_max(middle, '33.33%');
     const links = [
         'Home',
@@ -38,16 +37,20 @@ export function component_top(parent) {
     });
     element_style_margin_vertical_auto(middle);
     let right = element_with_text(container, 'div', config_company().phone);
-    element_style_display_inline_block(right);
     element_style_width_min_max(right, '33.33%');
     element_style_margin_vertical_auto(right);
     window_match_media_on_change(`(max-width: 600px)`, matches => {
+        const group1 = [
+            middle,
+            right
+        ];
         if (matches) {
-            for_each([
-                middle,
-                right
-            ], e => {
+            for_each(group1, e => {
                 element_style_display_none(e);
+            });
+        } else {
+            for_each(group1, e => {
+                element_style_display_inline_block(e);
             });
         }
     });
