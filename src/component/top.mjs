@@ -42,7 +42,12 @@ export function component_top(parent) {
     element_style_margin_vertical_auto(right);
     window_match_media_on_change(`(max-width: 600px)`, matches => {
         if (matches) {
-            alert('here');
+            for_each([
+                middle,
+                right
+            ], e => {
+                element_hide(left);
+            });
         }
     });
 }
