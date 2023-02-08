@@ -18,6 +18,9 @@ export function component_top(parent) {
         'align-items': 'center'
     });
     let left = element_with_text(container, 'div', config_company().name);
+    element_style(left, {
+        fontSize: '4vh'
+    })
     element_style_display_inline_block(left);
     element_style_width_min_max(left, '33.33%');
     element_style_margin_vertical_auto(left);
@@ -56,5 +59,12 @@ export function component_top(parent) {
         }
     });
     let right_small = element(container, 'div');
-    component_fa(right_small, 'bars');
+    element_style(right_small, {
+        marginLeft: 'auto',
+        marginRight: '1vh',
+    })
+    let bars = component_fa(right_small, 'bars');
+    element_style(bars, {
+        fontSize: '4vh'
+    })
 }
