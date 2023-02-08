@@ -11,11 +11,10 @@ import { element_style } from './../../node_modules/m00/src/element/style.mjs';
 import { element_with_text } from './../../node_modules/m00/src/element/with/text.mjs';
 import { component_fa } from './fa.mjs';
 export function component_top(content) {
-    const links = company_links_get();
-    let overlay = component_top_overlay(links, content);
+    let overlay = component_top_overlay(content);
     let container = component_top_container(content);
     component_top_left(container);
-    let middle = component_top_middle(container, links);
+    let middle = component_top_middle(container);
     let right = component_top_right(container);
     window_match_media_on_change(`(min-width: 701px)`, matches => {
         const group1 = [
@@ -79,7 +78,8 @@ function component_top_right(container) {
     return right;
 }
 
-function component_top_middle(container, links) {
+function component_top_middle(container) {
+    const links = company_links_get();
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
     component_style_top_item(middle);
@@ -98,7 +98,8 @@ function component_top_left(container) {
     component_style_top_item(left);
 }
 
-function component_top_overlay(links, content) {
+function component_top_overlay(content) {
+    const links = company_links_get();
     let overlay = element(document.body, 'div');
     element_style_display_none(overlay);
     element_style(overlay, {
