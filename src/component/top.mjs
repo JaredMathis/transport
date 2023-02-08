@@ -61,7 +61,7 @@ export function component_top(parent) {
     let right_small = element(container, 'div');
     element_style(right_small, {
         marginLeft: 'auto',
-        marginRight: '1vh',
+        marginRight: '3vh',
     })
     let bars = component_fa(right_small, 'bars');
     element_style(bars, {
