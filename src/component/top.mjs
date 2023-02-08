@@ -10,7 +10,7 @@ import { element } from './../../node_modules/m00/src/element.mjs';
 import { element_style } from './../../node_modules/m00/src/element/style.mjs';
 import { element_with_text } from './../../node_modules/m00/src/element/with/text.mjs';
 import { component_fa } from './fa.mjs';
-export function component_top(parent) {
+export function component_top(content) {
     const links = [
         'Home',
         'Services',
@@ -33,7 +33,18 @@ export function component_top(parent) {
         let link = element_with_text(overlay, 'div', l);
         element_style(link, { padding: '1vh' });
     });
-    let container = element(parent, 'div');
+    let close = component_fa(overlay, 'times');
+    element_style(close, {
+        position: 'absolute',
+        top: '5vh',
+        right: '5vh',
+        cursor: 'pointer',
+    });
+    click(close, () => {
+        element_style(content, { display: 'block' });
+        element_style_display_none(overlay);
+    });
+    let container = element(content, 'div');
     element_style(container, {
         backgroundColor: 'black',
         color: 'white',
@@ -80,9 +91,10 @@ export function component_top(parent) {
     let bars = component_fa(right_small, 'bars');
     element_style(bars, {
         fontSize: '4vh',
-        cursor: 'pointer'
+        cursor: 'pointer',
     });
     click(bars, () => {
         element_style(overlay, { display: 'block' });
+        element_style_display_none(content);
     });
 }
