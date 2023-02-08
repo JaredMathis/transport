@@ -34,7 +34,7 @@ export function component_top(parent) {
         element_style(link, { padding: '0.8vh' });
     });
     element_style_margin_vertical_auto(middle);
-    let right = element_with_text(container, 'div', 'right');
+    let right = element_with_text(container, 'div', config_company().phone);
     element_style_display_inline_block(right);
     element_style_width_min_max(right, '33.33%');
     element_style_margin_vertical_auto(right);
