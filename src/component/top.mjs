@@ -19,6 +19,7 @@ export function component_top(parent) {
         'Contact'
     ];
     let overlay = element(document.body, 'div');
+    element_style_display_none(overlay)
     element_style(overlay, {
         position: 'absolute',
         top: '0',
