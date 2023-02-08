@@ -27,14 +27,7 @@ export function component_top(content) {
         'align-items': 'center'
     });
     component_top_left(container);
-    let middle = element(container, 'div');
-    element_style(container, { textAlign: 'center' });
-    component_style_top_item(middle);
-    for_each(links, label => {
-        let link = element_with_text(middle, 'div', ` ${ label } `);
-        element_style_display_inline_block(link);
-        element_style(link, { padding: '0.8vh' });
-    });
+    let middle = component_top_middle(container, links);
     let right = element_with_text(container, 'div', config_company().phone);
     component_style_top_item(right);
     window_match_media_on_change(`(min-width: 701px)`, matches => {
@@ -66,6 +59,18 @@ export function component_top(content) {
         element_style(overlay, { display: 'block' });
         element_style_display_none(content);
     });
+}
+
+function component_top_middle(container, links) {
+    let middle = element(container, 'div');
+    element_style(container, { textAlign: 'center' });
+    component_style_top_item(middle);
+    for_each(links, label => {
+        let link = element_with_text(middle, 'div', ` ${label} `);
+        element_style_display_inline_block(link);
+        element_style(link, { padding: '0.8vh' });
+    });
+    return middle;
 }
 
 function component_top_left(container) {
