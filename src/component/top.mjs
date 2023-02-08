@@ -65,6 +65,7 @@ export function component_top(parent) {
     })
     let bars = component_fa(right_small, 'bars');
     element_style(bars, {
-        fontSize: '4vh'
+        fontSize: '4vh',
+        cursor: 'pointer'
     })
 }
