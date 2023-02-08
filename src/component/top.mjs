@@ -22,13 +22,14 @@ export function component_top(parent) {
     element_style(container, { textAlign: 'center' });
     element_style_display_inline_block(middle);
     element_style_width_min_max(middle, '33.33%');
-    for_each([
+    const links = [
         'Home',
         'Services',
         'Careers',
         'About',
         'Contact'
-    ], label => {
+    ];
+    for_each(links, label => {
         let link = element_with_text(middle, 'div', ` ${ label } `);
         element_style_display_inline_block(link);
         element_style(link, { padding: '0.8vh' });
