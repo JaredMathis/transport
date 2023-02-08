@@ -47,7 +47,7 @@ export function component_top(parent) {
                 middle,
                 right
             ], e => {
-                element_style_display_none(left);
+                element_style_display_none(e);
             });
         }
     });
