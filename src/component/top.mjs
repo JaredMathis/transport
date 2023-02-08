@@ -1,3 +1,4 @@
+import { window_match_media_on_change } from './../../node_modules/m00/src/window/match/media/on/change.mjs';
 import { config_company } from './../config/company.mjs';
 import { element_style_margin_vertical_auto } from './../../node_modules/m00/src/element/style/margin/vertical/auto.mjs';
 import { for_each } from './../../node_modules/m00/src/for/each.mjs';
@@ -39,4 +40,9 @@ export function component_top(parent) {
     element_style_display_inline_block(right);
     element_style_width_min_max(right, '33.33%');
     element_style_margin_vertical_auto(right);
+    window_match_media_on_change(`(max-width: 600px)`, event => {
+        if (event.matches) {
+            alert('here');
+        }
+    });
 }
