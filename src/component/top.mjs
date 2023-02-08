@@ -54,11 +54,10 @@ export function component_top(content) {
     let left = element_with_text(container, 'div', config_company().name);
     element_style(left, { fontSize: '4vh' });
     element_style_display_inline_block(left);
-    element_style_width_third(left);
-    element_style_margin_vertical_auto(left);
+    component_style_top_item(left);
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
-    element_style_width_third(middle);
+    component_style_top_item(middle);
     for_each(links, label => {
         let link = element_with_text(middle, 'div', ` ${ label } `);
         element_style_display_inline_block(link);
@@ -66,8 +65,7 @@ export function component_top(content) {
     });
     element_style_margin_vertical_auto(middle);
     let right = element_with_text(container, 'div', config_company().phone);
-    element_style_width_third(right);
-    element_style_margin_vertical_auto(right);
+    component_style_top_item(right);
     window_match_media_on_change(`(min-width: 701px)`, matches => {
         const group1 = [
             middle,
@@ -97,6 +95,11 @@ export function component_top(content) {
         element_style(overlay, { display: 'block' });
         element_style_display_none(content);
     });
+}
+
+function component_style_top_item(left) {
+    element_style_width_third(left);
+    element_style_margin_vertical_auto(left);
 }
 
 function element_style_width_third(left) {
