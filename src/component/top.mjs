@@ -8,6 +8,7 @@ import { element_style_width_min_max } from './../../node_modules/m00/src/elemen
 import { element } from './../../node_modules/m00/src/element.mjs';
 import { element_style } from './../../node_modules/m00/src/element/style.mjs';
 import { element_with_text } from './../../node_modules/m00/src/element/with/text.mjs';
+import { component_fa } from './fa.mjs';
 export function component_top(parent) {
     let container = element(parent, 'div');
     element_style(container, {
@@ -54,5 +55,6 @@ export function component_top(parent) {
             });
         }
     });
-    
+    let right_small = element(container, 'div');
+    component_fa(right_small, 'bars');
 }
