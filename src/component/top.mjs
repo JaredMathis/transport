@@ -58,7 +58,7 @@ export function component_top(content) {
     element_style_margin_vertical_auto(left);
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
-    element_style_width_min_max(middle, '33.33%');
+    element_style_width_third(middle);
     for_each(links, label => {
         let link = element_with_text(middle, 'div', ` ${ label } `);
         element_style_display_inline_block(link);
@@ -66,7 +66,7 @@ export function component_top(content) {
     });
     element_style_margin_vertical_auto(middle);
     let right = element_with_text(container, 'div', config_company().phone);
-    element_style_width_min_max(right, '33.33%');
+    element_style_width_third(right);
     element_style_margin_vertical_auto(right);
     window_match_media_on_change(`(min-width: 701px)`, matches => {
         const group1 = [
