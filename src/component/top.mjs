@@ -39,7 +39,7 @@ export function component_top(parent) {
     let right = element_with_text(container, 'div', config_company().phone);
     element_style_width_min_max(right, '33.33%');
     element_style_margin_vertical_auto(right);
-    window_match_media_on_change(`(min-width: 601px)`, matches => {
+    window_match_media_on_change(`(min-width: 701px)`, matches => {
         const group1 = [
             middle,
             right
