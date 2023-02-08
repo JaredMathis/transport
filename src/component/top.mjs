@@ -35,7 +35,6 @@ export function component_top(content) {
         element_style_display_inline_block(link);
         element_style(link, { padding: '0.8vh' });
     });
-    element_style_margin_vertical_auto(middle);
     let right = element_with_text(container, 'div', config_company().phone);
     component_style_top_item(right);
     window_match_media_on_change(`(min-width: 701px)`, matches => {
