@@ -26,10 +26,7 @@ export function component_top(content) {
         display: 'flex',
         'align-items': 'center'
     });
-    let left = element_with_text(container, 'div', config_company().name);
-    element_style(left, { fontSize: '4vh' });
-    element_style_display_inline_block(left);
-    component_style_top_item(left);
+    component_top_left(container);
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
     component_style_top_item(middle);
@@ -70,6 +67,13 @@ export function component_top(content) {
         element_style(overlay, { display: 'block' });
         element_style_display_none(content);
     });
+}
+
+function component_top_left(container) {
+    let left = element_with_text(container, 'div', config_company().name);
+    element_style(left, { fontSize: '4vh' });
+    element_style_display_inline_block(left);
+    component_style_top_item(left);
 }
 
 function component_top_overlay(links, content) {
