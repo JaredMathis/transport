@@ -10,7 +10,8 @@ export function main() {
     });
     const parent = document.body;
     element_style(parent, { margin: 0 });
-    component_top(parent);
+    let content = element(parent, 'div');
+    component_top(content);
     let s = element(parent, 'script');
     element_attribute_merge(s, {
         src: 'https://kit.fontawesome.com/9fc689c523.js',

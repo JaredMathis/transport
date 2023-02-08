@@ -10,6 +10,31 @@ import { element_style } from './../../node_modules/m00/src/element/style.mjs';
 import { element_with_text } from './../../node_modules/m00/src/element/with/text.mjs';
 import { component_fa } from './fa.mjs';
 export function component_top(parent) {
+    const links = [
+        'Home',
+        'Services',
+        'Careers',
+        'About',
+        'Contact'
+    ];
+    let overlay = element(document.body, 'div');
+    element_style(overlay, {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        backgroundColor: 'white',
+        // width: '100%',
+        // height: '100%',
+        padding: '5vh'
+    })
+    // element_style_display_none(overlay);
+    for_each(links, l => {
+        let link = element_with_text(overlay, 'div', l);
+        element_style(link, {
+            padding: '1vh'
+        })
+    })
+
     let container = element(parent, 'div');
     element_style(container, {
         backgroundColor: 'black',
@@ -27,13 +52,6 @@ export function component_top(parent) {
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
     element_style_width_min_max(middle, '33.33%');
-    const links = [
-        'Home',
-        'Services',
-        'Careers',
-        'About',
-        'Contact'
-    ];
     for_each(links, label => {
         let link = element_with_text(middle, 'div', ` ${ label } `);
         element_style_display_inline_block(link);
