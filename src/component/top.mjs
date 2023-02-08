@@ -54,7 +54,7 @@ export function component_top(content) {
     let left = element_with_text(container, 'div', config_company().name);
     element_style(left, { fontSize: '4vh' });
     element_style_display_inline_block(left);
-    element_style_width_min_max(left, '33.33%');
+    element_style_width_third(left);
     element_style_margin_vertical_auto(left);
     let middle = element(container, 'div');
     element_style(container, { textAlign: 'center' });
@@ -97,4 +97,8 @@ export function component_top(content) {
         element_style(overlay, { display: 'block' });
         element_style_display_none(content);
     });
+}
+
+function element_style_width_third(left) {
+    element_style_width_min_max(left, '33.33%');
 }
